@@ -51,6 +51,7 @@ function addNumberToScreen(number, screen) {
 /**
  * The addNumberToScreen function takes an HTML element containing an operator, concatenates it to the lower screen div inner text, clears both screen divs
  * and displays the output on the upper screen div
+ * if both screen divs are occupied, it runs the operation and moves the output plus the new operator to the upper screen div
  * @param {HTMLElement} operator is the operator to be displayed on the screen after the click event
  * @param {HTMLElement} screen_lower is the string within the lower displaying div
  * @param {HTMLElement} screen_upper is the string within the uper displaying div
@@ -86,6 +87,7 @@ function delete_character(screen) {
   return screen.textContent.slice(0, -1);
 }
 
+//returns the operation output of the two operands contained in the upper and lower screen divs
 function final_result() {
   const upper_value = screen_upper.textContent;
   const lower_value = screen_lower.textContent;
